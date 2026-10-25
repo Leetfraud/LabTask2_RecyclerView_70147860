@@ -38,14 +38,14 @@ def create_report():
     sub = ParagraphStyle('S', parent=styles['Normal'], fontSize=10.5, leading=14,
                          textColor=colors.HexColor('#333333'), alignment=1)
     h1 = ParagraphStyle('H1', parent=styles['Heading2'], fontSize=12, leading=15,
-                        textColor=colors.HexColor('#003366'), spaceBefore=10, spaceAfter=5,
+                        textColor=colors.HexColor('#003366'), spaceBefore=7, spaceAfter=4,
                         fontName='Helvetica-Bold')
     h2 = ParagraphStyle('H2', parent=styles['Heading3'], fontSize=10.5, leading=13,
                         textColor=colors.HexColor('#1B5E20'), spaceBefore=7, spaceAfter=3,
                         fontName='Helvetica-Bold')
-    body = ParagraphStyle('B', parent=styles['Normal'], fontSize=9, leading=13,
+    body = ParagraphStyle('B', parent=styles['Normal'], fontSize=8.8, leading=12,
                           textColor=colors.HexColor('#222222'))
-    bullet = ParagraphStyle('BL', parent=body, fontSize=8.8, leading=12, leftIndent=12)
+    bullet = ParagraphStyle('BL', parent=body, fontSize=8.5, leading=11, leftIndent=12)
     caption = ParagraphStyle('C', parent=body, fontSize=8, leading=10.5, alignment=1,
                              textColor=colors.HexColor('#444444'), fontName='Helvetica-Bold')
     callout = ParagraphStyle('CO', parent=body, textColor=colors.HexColor('#003366'))
@@ -60,7 +60,7 @@ def create_report():
         ]))
         return t
 
-    def shot(name, w=1.6 * inch, h=3.4 * inch):
+    def shot(name, w=1.53 * inch, h=3.4 * inch):
         path = os.path.join(IMG_DIR, name)
         if os.path.exists(path):
             return Image(path, width=w, height=h)
@@ -175,7 +175,7 @@ def create_report():
         "<code>startActivity()</code> is inside try–catch and a Toast is shown on "
         "<code>ActivityNotFoundException</code>.",
         "<b>Step 5 (Item click test):</b> tapped three different courses; each opened a details screen showing only "
-        "the tapped course (Figures 3–5). The email app opened from \"Email Instructor\" (Figure 6).",
+        "the tapped course: SE-3102, SE-3205 and SE-4101 (Figures 3–5). Tapping \"Email Instructor\" on SE-3301 opened Gmail addressed only to nida.farooq@se.uol.edu.pk (Figure 6).",
     ]:
         s.append(Paragraph("• " + t, bullet))
 
@@ -187,13 +187,13 @@ def create_report():
     s.append(shot_row([
         ("01_course_list.png", "<b>Figure 1:</b> Course List"),
         ("02_no_layout_manager.png", "<b>Figure 2:</b> Without setLayoutManager()"),
-        ("06_email_app.png", "<b>Figure 6:</b> Email Instructor"),
+        ("06_email_app.png", "<b>Figure 6:</b> Email app (SE-3301 instructor)"),
     ], 2.36 * inch))
     s.append(Spacer(1, 10))
     s.append(shot_row([
-        ("03_details_course_1.png", "<b>Figure 3:</b> Details — Course 1"),
-        ("04_details_course_2.png", "<b>Figure 4:</b> Details — Course 2"),
-        ("05_details_course_3.png", "<b>Figure 5:</b> Details — Course 3"),
+        ("03_details_course_1.png", "<b>Figure 3:</b> Details — SE-3102"),
+        ("04_details_course_2.png", "<b>Figure 4:</b> Details — SE-3205"),
+        ("05_details_course_3.png", "<b>Figure 5:</b> Details — SE-4101"),
     ], 2.36 * inch))
 
     doc.build(s)

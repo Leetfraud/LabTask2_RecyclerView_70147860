@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Outer Shield / Circle -->
+    <path
+        android:fillColor="#003366"
+        android:pathData="M60,10 C87.61,10 110,32.39 110,60 C110,87.61 87.61,110 60,110 C32.39,110 10,87.61 10,60 C10,32.39 32.39,10 60,10 Z" />
+    <!-- Inner Border -->
+    <path
+        android:strokeColor="#FFD700"
+        android:strokeWidth="2.5"
+        android:pathData="M60,16 C84.3,16 104,35.7 104,60 C104,84.3 84.3,104 60,104 C35.7,104 16,84.3 16,60 C16,35.7 35.7,16 60,16 Z" />
+    <!-- Academic Cap Diamond -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,34 L94,48 L60,62 L26,48 Z" />
+    <!-- Cap Base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,54 L38,70 C38,78 60,84 60,84 C60,84 82,78 82,70 L82,54 L60,63 Z" />
+    <!-- Cap Tassel Hanging -->
+    <path
+        android:strokeColor="#FFD700"
+        android:strokeWidth="3"
+        android:pathData="M90,50 L90,72" />
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M87,72 L93,72 L92,80 L88,80 Z" />
+    <!-- Book symbol underneath -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M44,92 C52,90 60,94 60,94 C60,94 68,90 76,92" />
+</vector>
